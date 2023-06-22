@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="box" id="heading">
+        <h1><%= tittle %></h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="box ">
+
+       <% dataCollect.forEach(item => { %>
+        <form method="POST" action="/?_method=DELETE" >
+        <div class="item ">
+            <input type="checkbox" id="homeItem"  name="homeItem" value="<%= item.homeItem %>" onChange="this.form.submit()">
+             <p><%= item.homeItem %></p>
+            
+            </div>
+        </form>
+       <% }) %>
+                    
+             
+              
+                <form class="item" method="post" action="/">
+
+                    <input type="text" class="form-control" id="homeItem" name="homeItem" placeholder="New Item" required>
+                  <button type="submit">+</button>
+
+                </form>
+    </div>
+</div>

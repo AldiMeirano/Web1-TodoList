@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="box" id="heading">
+        <h1><%= tittle %></h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="box ">
+
+        <% dataJson.forEach(items => { %>
+            <form method="POST" action="/todolist?_method=DELETE" >
+            <div class="item ">
+               
+                    <input type="checkbox" id="newItem"  name="newItem" value="<%= items.newItem %>" onChange="this.form.submit()">
+                    <p><%= items.newItem %> </p>
+           
+               
+                </div>
+            </form>
+             
+                    
+             
+                <% }) %>
+                <form class="item" method="post" action="/todolist">
+
+                    <input type="text" class="form-control" id="newItem" name="newItem" placeholder="New Item" required>
+                  <button type="submit">+</button>
+
+                </form>
+    </div>
+</div>
